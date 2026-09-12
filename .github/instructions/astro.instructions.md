@@ -109,7 +109,7 @@ There is no Svelte/React layer. When a page genuinely needs client behaviour, ad
 ## TypeScript
 
 - Use TypeScript for type-safe props
-- Define `Props` interface in frontmatter
+- Define and document a `Props` interface in frontmatter for every reusable component. Describe the component's purpose in a short TSDoc comment and document each prop whose meaning, default, or rendering behavior is not obvious from its name and type.
 - Type component imports and helper return values
 - Run `npx astro sync` to (re)generate route/content types before linting or type-checking
 - `.astro` files are type-checked by `npm run typecheck:astro` (which runs `astro sync` then `astro check`), on the classic `typescript` package. The pure TypeScript in `db/`, `src/lib/`, and `src/types/` is type-checked separately by `npm run typecheck` (the native TS 7 compiler, `tsgo`), which does **not** process `.astro` files.
@@ -120,3 +120,9 @@ There is no Svelte/React layer. When a page genuinely needs client behaviour, ad
 - Minimize client-side JavaScript — the default is zero JS shipped
 - Import and use global CSS styles from layouts
 - Always include a `data-testid` on interactive elements (see `ui.instructions.md`)
+
+## Comments and component contracts
+
+- Comments should explain intent, trade-offs, or constraints, not repeat the markup or script they describe.
+- Keep comments current when changing the component behavior; delete comments that no longer apply.
+- Use TSDoc comments for reusable component `Props` interfaces so callers can understand the supported API without reading the template.

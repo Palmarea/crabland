@@ -49,7 +49,12 @@ Refer to technology-specific instruction files:
 - Create reusable components for common UI patterns
 - Keep components focused on a single responsibility
 - Use props for configuration, not duplication
-- Document component APIs with TypeScript types
+- Document component APIs with TypeScript types and a TSDoc comment on each reusable Astro component's `Props` interface
+
+### Comments and documentation
+
+- Explain user-facing intent, accessibility decisions, or non-obvious trade-offs; do not restate markup, class names, or straightforward event handlers.
+- Keep comments current with the behavior they describe. An outdated comment is a defect and should be fixed or removed with the related change.
 
 ## Development Workflow
 
