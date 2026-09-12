@@ -10,6 +10,20 @@ Tailspin Toys is a crowdfunding platform for games with a developer theme. The p
 - **Vitest** — unit tests for the data layer and pure transforms.
 - **Playwright** — end-to-end tests run against the built static site.
 
+## Coding standards
+
+Repository-wide coding standards are maintained in
+[`.github/copilot-instructions.md`](.github/copilot-instructions.md), with focused guidance for
+[Astro components](.github/instructions/astro.instructions.md),
+[the data layer](.github/instructions/drizzle.instructions.md),
+[UI components](.github/instructions/ui.instructions.md), and
+[tests](.github/instructions/unit-tests.instructions.md).
+
+In particular, comments should explain intent rather than restate code. Exported functions in
+`db/` and `src/lib/` require TSDoc/JSDoc documentation for their purpose, parameters, and return
+values, and reusable Astro components must document their `Props` contract. ESLint enforces the
+repository's TypeScript formatting conventions.
+
 The database is migrated and seeded automatically before `dev`/`build` (via the `predev`/`prebuild` npm scripts) and is written to the gitignored `tailspin.db` file.
 
 ## Using this template
